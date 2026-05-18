@@ -91,4 +91,19 @@ class Analyst:
         # For now, append safe default flags
         flags.append("FFT_Pattern_Detected")
         
-        return flags
+return flags
+
+# Put it right here at the absolute bottom of the file, completely unindented:
+if __name__ == "__main__":
+    analyzer = Analyst()
+    
+    # Drop a test image (like a JPEG of Louis XVI or your AI art) 
+    # into the same folder and put its exact file name here:
+    test_file = "test_portrait.jpg" 
+    
+    try:
+        print("--- RUNNING ANALYST TEST ---")
+        dossier_output = analyzer.analyze_image(test_file)
+        print(dossier_output)
+    except Exception as e:
+        print(f"Test failed: Make sure '{test_file}' exists in this folder. Error: {e}")
