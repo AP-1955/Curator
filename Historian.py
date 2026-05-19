@@ -40,8 +40,8 @@ class Historian:
             # Step 2: Subject exists. Let's compare the deep details for duplication.
             # We compare what the Analyst found vs what was recorded in MySQL
             details_match = (
-                match['art_style'] == dossier['art_style'] and
-                match['painting_type'] == dossier['painting_type']
+                match.get('art_style') == dossier.get('art_style') and
+                match.get('painting_type') == dossier.get('painting_type')
             )
             
             if details_match:
